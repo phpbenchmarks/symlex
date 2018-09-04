@@ -41,10 +41,6 @@ Thumbs.db
 app/config/*.local.yml
 vendor/
 bin/
-web/bower_components/
-frontend/node_modules/
-frontend/.eslintcache
-frontend/tests/result.html
 docker-compose.override.yml
 
 # IDE generated files #

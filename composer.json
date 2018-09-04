@@ -15,17 +15,17 @@
     "require": {
         "php": ">=7.1",
         "symlex/symlex-core": "^4.1",
+        "phpbenchmarks/symlex-common": "dev-symlex_4_hello-world",
         "incenteev/composer-parameter-handler": "^2.0"
     },
-    "minimum-stability": "stable",
-    "autoload": {
-        "psr-4": {
-            "App\\": "src/"
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/phpbenchmarks/symlex-common"
         }
-    },
-    "config": {
-      "bin-dir": "bin/"
-    },
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "scripts": {
         "post-composer-scripts": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",

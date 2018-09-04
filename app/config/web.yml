@@ -24,4 +24,4 @@ services:
 
     controller.web.benchmark:
         public: true
-        class: App\Controller\BenchmarkController
+        class: PhpBenchmarksSymlex\Controller\BenchmarkController

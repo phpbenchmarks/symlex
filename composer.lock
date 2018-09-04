@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "dfa5fffa4f9fa7c43355d4f34409cb99",
+    "content-hash": "5272311a0213d04442ae792944a8f0c7",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -751,6 +751,48 @@
                 "parameters management"
             ],
             "time": "2018-02-13T18:05:56+00:00"
+        },
+        {
+            "name": "phpbenchmarks/symlex-common",
+            "version": "dev-symlex_4_hello-world",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpbenchmarks/symlex-common.git",
+                "reference": "284df1bb514d468ef0527a5eddc95e38ec1f95e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpbenchmarks/symlex-common/zipball/284df1bb514d468ef0527a5eddc95e38ec1f95e0",
+                "reference": "284df1bb514d468ef0527a5eddc95e38ec1f95e0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1",
+                "symlex/symlex-core": "^4.1"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "PhpBenchmarksSymlex\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Mayer",
+                    "email": "michael@liquidbytes.net",
+                    "homepage": "https://liquidbytes.net/",
+                    "role": "Developer"
+                }
+            ],
+            "homepage": "https://github.com/phpbenchmarks/symlex-common",
+            "support": {
+                "source": "https://github.com/phpbenchmarks/symlex-common/tree/symlex_4_hello-world",
+                "issues": "https://github.com/phpbenchmarks/symlex-common/issues"
+            },
+            "time": "2018-09-04 22:18:51"
         },
         {
             "name": "psr/cache",
@@ -1552,9 +1594,11 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
-    "prefer-stable": false,
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "phpbenchmarks/symlex-common": 20
+    },
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.1"
