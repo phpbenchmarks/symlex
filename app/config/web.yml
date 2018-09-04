@@ -23,6 +23,6 @@ services:
         arguments: [ "@app", "@service_container" ]
 
     controller.rest.benchmark:
-        class: App\Controller\BenchmarkController
+        class: PhpBenchmarksSymlex\Controller\BenchmarkController
         public: true
         arguments: [ "@serializer" ]
