@@ -14,14 +14,12 @@
     ],
     "require": {
         "php": ">=7.1",
-        "ext-pdo_mysql": "*",
         "symlex/symlex-core": "^4.1",
         "symlex/input-validation": "^4.2",
         "symlex/doctrine-active-record": "^4.3",
-        "doctrine/migrations": "^1.1",
         "monolog/monolog": "^1.0",
-        "swiftmailer/swiftmailer": "^5.0",
-        "incenteev/composer-parameter-handler": "^2.0"
+        "incenteev/composer-parameter-handler": "^2.0",
+        "phpbenchmarks/benchmark-rest-data": "^1.0.0"
     },
     "minimum-stability": "stable",
     "autoload": {

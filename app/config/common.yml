@@ -1,39 +1,13 @@
 imports:
-    - { resource: const.yml }
     - { resource: twig.yml }
-    - { resource: mailer.yml }
-    - { resource: forms.yml }
-    - { resource: models.yml }
 
 services:
-    log.handler:
-        class: Monolog\Handler\ErrorLogHandler
+    normalizer.object:
+        class: Symfony\Component\Serializer\Normalizer\ObjectNormalizer
 
-    log:
-        class: Monolog\Logger
-        arguments:
-            - "log"
-        calls:
-            - [ pushHandler, [ "@log.handler" ] ]
-
-    redis:
-        class: Redis
-        calls:
-            - [ 'connect', [ '%redis.host%', '%redis.port%' ] ]
-
-    cache:
-        class: Symfony\Component\Cache\Simple\RedisCache
-        arguments:
-            - "@redis"
-
-    db.driver:
-        class: Doctrine\DBAL\Driver\PDOMySql\Driver
-
-    db:
-        class: Doctrine\DBAL\Connection
-        arguments:
-            - "%db.options%"
-            - "@db.driver"
+    serializer:
+        class: Symfony\Component\Serializer\Serializer
+        arguments: [ [ "@normalizer.object" ], [] ]
 
     yaml_loader:
         class: Symfony\Component\Translation\Loader\YamlFileLoader
@@ -49,23 +23,4 @@ services:
             - [ addLoader, [ "array", "@array_loader" ]]
             - [ addResource, [ "yaml", "%app.path%/l10n/de.yml", "de" ] ]
             - [ addResource, [ "yaml", "%app.path%/l10n/en.yml", "en" ] ]
-
-    dao.factory:
-        class: Doctrine\ActiveRecord\Dao\Factory
-        arguments:
-            - "@db"
-        calls:
-            - [ setFactoryNamespace, [ 'App\Dao' ] ]
-            - [ setFactoryPostfix, [ 'Dao' ] ]
-
-    service.token_generator:
-        class: App\Service\TokenGenerator
-
-    service.mail:
-        class: App\Service\Mail
-        shared: false
-        arguments:
-            - "@mailer"
-            - "@twig"
-            - "@service.token_generator"
-            - { "%app.email%": "%app.name%" }
+            - [ addResource, [ "yaml", "%app.path%/l10n/fr.yml", "fr" ] ]

@@ -42,9 +42,6 @@ class WebApp extends Kernel
         $container->get('router.error')->route();
 
         // Routing for REST API calls
-        $container->get('router.rest')->route($this->getUrlPrefix('/api/v1'), 'controller.rest.v1.');
-
-        // Uncomment the following line to enable server-side routing
-        $container->get('router.twig')->route($this->getUrlPrefix(), 'controller.web.');
-    }
+        $container->get('router.rest')->route($this->getUrlPrefix(), 'controller.rest.');
+   }
 }
