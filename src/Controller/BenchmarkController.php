@@ -1,18 +1,15 @@
 <?php
 
-namespace App\Controller\Web;
+namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @see https://github.com/symlex/symlex#controllers
  */
-class IndexController
+class BenchmarkController
 {
-    /**
-     * Renders the template in app/templates/index/index.twig
-     */
-    public function indexAction()
+    public function helloworldAction()
     {
         return new Response('Hello World !');
     }

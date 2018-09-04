@@ -1,14 +1,9 @@
 parameters:
     exception.codes:
         InvalidArgumentException: 400
-        Doctrine\ActiveRecord\Exception\NotFoundException: 404
-        App\Exception\UnauthorizedException: 401
-        App\Exception\AccessDeniedException: 403
         Symlex\Exception\AccessDeniedException: 403
         Symlex\Exception\NotFoundException: 404
         Symlex\Exception\MethodNotAllowedException: 405
-        App\Exception\FormInvalidException: 409
-        Swift_TransportException: 503
         Exception: 500
 
     exception.messages:

@@ -8,19 +8,9 @@ RUN apk update \
         icu-dev \
         libevent-dev \
         openssl-dev \
-        zlib-dev \
     && apk add \
         bzip2 \
         git \
-        mysql-client \
-        zlib\
-        libpng\
-        libpng-dev\
-        libjpeg\
-        libjpeg-turbo-dev\
-        libwebp-dev\
-        freetype\
-        freetype-dev\
         zlib\
         zlib-dev
 
@@ -29,17 +19,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin -
 RUN docker-php-ext-install -j$(getconf _NPROCESSORS_ONLN) \
     intl \
     mbstring \
-    pdo_mysql \
-    sockets \
     zip
-
-RUN pecl channel-update pecl.php.net \
-    && pecl install -o -f \
-        redis \
-        event \
-    && rm -rf /tmp/pear \
-    && echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini \
-    && echo "extension=event.so" > /usr/local/etc/php/conf.d/event.ini
 
 COPY ./ /var/www/html
 

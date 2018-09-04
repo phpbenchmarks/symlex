@@ -17,31 +17,8 @@ services:
         build:
             context: ./
             dockerfile: ./app/docker/php/Dockerfile
-        depends_on:
-            - db
-            - redis
-        volumes:
-            - ./:/var/www/html
-
-    db:
-        image: mysql:5.7
-        command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max-connections=512
-        ports:
-            - "3306:3306"
-        volumes:
-            - mysql-data:/var/lib/mysql
-        environment:
-            MYSQL_ROOT_PASSWORD: root
-            MYSQL_USER: web
-            MYSQL_PASSWORD: web
-            MYSQL_DATABASE: web
-
-    redis:
-        image: redis:3-alpine
-
-volumes:
-    mysql-data:
-        driver: local
+        # volumes:
+        #    - ./:/var/www/html
 
 networks:
     default:

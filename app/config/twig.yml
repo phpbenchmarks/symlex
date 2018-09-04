@@ -8,10 +8,6 @@ parameters:
         auto_reload: true
 
 services:
-    twig.trans:
-        class: Symfony\Bridge\Twig\Extension\TranslationExtension
-        arguments: [ "@translator" ]
-
     twig.loader:
         class: Twig_Loader_Filesystem
         arguments: [ "%twig.path%" ]
@@ -25,4 +21,3 @@ services:
             - [ addGlobal, [ 'app_version', "%app.version%" ] ]
             - [ addGlobal, [ 'app_url', "%app.url%" ] ]
             - [ addGlobal, [ 'locale', "%app.locale%" ] ]
-            - [ addExtension, [ '@twig.trans' ] ]
