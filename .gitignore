@@ -52,3 +52,8 @@ docker-compose.override.yml
 .settings
 .swp
 .tmp
+
+# phpbenchmarks #
+#######################
+
+composer.lock
