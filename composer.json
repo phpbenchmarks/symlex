@@ -15,7 +15,7 @@
     "require": {
         "php": ">=7.1",
         "symlex/symlex-core": "^4.1",
-        "phpbenchmarks/symlex-common": "dev-symlex_4_rest-api",
+        "phpbenchmarks/symlex-common": "4.3.0",
         "incenteev/composer-parameter-handler": "^2.0"
     },
     "repositories": [
