@@ -21,8 +21,3 @@ services:
         class: Symlex\Router\Web\RestRouter
         public: true
         arguments: [ "@app", "@service_container" ]
-
-    controller.rest.benchmark:
-        class: PhpBenchmarksSymlex\Controller\BenchmarkController
-        public: true
-        arguments: [ "@serializer" ]

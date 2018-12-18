@@ -1,0 +1,7 @@
+# This file is auto-generated during the composer install
+parameters:
+    app.name: App
+    app.version: '1.0'
+    app.url: 'http://benchmark.loc/'
+    app.email: root@localhost
+    app.locale: en

@@ -1,26 +1,3 @@
 imports:
     - { resource: twig.yml }
-
-services:
-    normalizer.object:
-        class: Symfony\Component\Serializer\Normalizer\ObjectNormalizer
-
-    serializer:
-        class: Symfony\Component\Serializer\Serializer
-        arguments: [ [ "@normalizer.object" ], [] ]
-
-    yaml_loader:
-        class: Symfony\Component\Translation\Loader\YamlFileLoader
-
-    array_loader:
-        class: Symfony\Component\Translation\Loader\ArrayLoader
-
-    translator:
-        class: Symfony\Component\Translation\Translator
-        arguments: [ "en" ]
-        calls:
-            - [ addLoader, [ "yaml", "@yaml_loader" ] ]
-            - [ addLoader, [ "array", "@array_loader" ]]
-            - [ addResource, [ "yaml", "%app.path%/l10n/de.yml", "de" ] ]
-            - [ addResource, [ "yaml", "%app.path%/l10n/en.yml", "en" ] ]
-            - [ addResource, [ "yaml", "%app.path%/l10n/fr.yml", "fr" ] ]
+    - { resource: ../../vendor/phpbenchmarks/symlex-common/services.yml }

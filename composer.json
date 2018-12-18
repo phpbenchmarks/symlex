@@ -24,21 +24,6 @@
             "url": "https://github.com/phpbenchmarks/symlex-common"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "scripts": {
-        "post-composer-scripts": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "app/clearcache",
-            "composer dump-autoload -o -a"
-        ],
-        "post-install-cmd": [
-            "@post-composer-scripts"
-        ],
-        "post-update-cmd": [
-            "@post-composer-scripts"
-        ]
-    },
     "extra": {
         "incenteev-parameters": {
             "file": "app/config/parameters.yml",
