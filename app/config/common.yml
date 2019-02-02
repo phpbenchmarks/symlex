@@ -1,3 +1,4 @@
 imports:
     - { resource: twig.yml }
     - { resource: ../../vendor/phpbenchmarks/symlex-common/services.yml }
+    - { resource: ../../vendor/phpbenchmarks/symlex-common/routes.yml }
