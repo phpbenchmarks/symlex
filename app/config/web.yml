@@ -1,0 +1,27 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: twig.yml }
+    - { resource: exceptions.yml }
+
+services:
+    app:
+        class: Symlex\Application\Web
+        public: true
+
+    request:
+        class: Symfony\Component\HttpFoundation\Request
+        factory: [ 'Symfony\Component\HttpFoundation\Request', createFromGlobals ]
+
+    router.error:
+        class: Symlex\Router\Web\ErrorRouter
+        public: true
+        arguments: [ "@app", "@twig", "%exception.codes%", "%exception.messages%", "%app.debug%" ]
+
+    router.twig:
+        class: Symlex\Router\Web\TwigRouter
+        public: true
+        arguments: [ "@app", "@service_container", "@twig" ]
+
+    controller.web.benchmark:
+        public: true
+        class: PhpBenchmarksSymlex\Controller\BenchmarkController
