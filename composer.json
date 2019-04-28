@@ -1,0 +1,44 @@
+{
+    "name": "phpbenchmarks/symlex",
+    "license": "proprietary",
+    "type": "project",
+    "description": "Benchmarks for Symlex",
+    "homepage": "https://github.com/phpbenchmarks/symlex",
+    "authors": [
+        {
+            "name": "Michael Mayer",
+            "email": "michael@liquidbytes.net",
+            "homepage": "https://liquidbytes.net/",
+            "role": "Developer"
+        },
+        {
+            "name": "Steevan BARBOYON",
+            "email": "steevan.barboyon@gmail.com",
+            "homepage": "http://www.info-droid.fr",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "symlex/symlex-core": "4.2.0",
+        "phpbenchmarks/symlex-common": "4.1.0",
+        "incenteev/composer-parameter-handler": "^2.0"
+    },
+    "scripts": {
+        "post-composer-scripts": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+        ],
+        "post-install-cmd": [
+            "@post-composer-scripts"
+        ],
+        "post-update-cmd": [
+            "@post-composer-scripts"
+        ]
+    },
+    "extra": {
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml",
+            "dist-file": "app/config/parameters.dist.yml"
+        }
+    }
+}
