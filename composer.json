@@ -1,6 +1,6 @@
 {
     "name": "phpbenchmarks/symlex",
-    "license": "MIT",
+    "license": "proprietary",
     "type": "project",
     "description": "Benchmarks for Symlex",
     "homepage": "https://github.com/phpbenchmarks/symlex",
@@ -20,18 +20,10 @@
     ],
     "require": {
         "php": ">=7.1",
-        "symlex/symlex-core": "4.1.*",
+        "symlex/symlex-core": "4.1.1",
         "phpbenchmarks/symlex-common": "4.1.0",
         "incenteev/composer-parameter-handler": "^2.0"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/phpbenchmarks/symlex-common"
-        }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "scripts": {
         "post-composer-scripts": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
